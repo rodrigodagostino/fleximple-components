@@ -1,0 +1,11 @@
+/**
+ * Select Control Styles
+ */
+
+.fleximple-components-select-control {
+	input[type="text"] {
+		&:focus {
+			box-shadow: none;
+		}
+	}
+}

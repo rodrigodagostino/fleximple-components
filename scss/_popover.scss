@@ -1,0 +1,14 @@
+/**
+ * Popover Styles
+ */
+
+.fleximple-components-popover {
+	&:not(.is-mobile) .components-popover__content {
+		min-width: 248px;
+	}
+
+	.fleximple-components-spinner {
+		width: 20px;
+		padding: 3px 0;
+	}
+}

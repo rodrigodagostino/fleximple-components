@@ -1,0 +1,55 @@
+/**
+ * Search Control Styles
+ */
+
+.fleximple-components-search-control {
+	display: flex;
+
+	&__suggestions {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		min-height: 41px;
+		max-height: 200px;
+		transition: all 0.15s ease-in-out;
+		padding: 8px 0;
+		overflow-y: auto;
+		text-align: center;
+
+		span {
+			padding: 4px 8px;
+		}
+	}
+
+	@media (min-width: 600px) {
+		& .components-spinner {
+			display: inherit;
+		}
+	}
+
+	&__suggestion {
+		font-size: 13px;
+		line-height: 1.4em;
+		text-align: left;
+		color: var(--wp-gray-50);
+		background: var(--white-rich);
+		padding: 4px 8px;
+		display: block;
+		cursor: pointer;
+		width: 100%;
+		border: none;
+		box-shadow: none;
+
+		&:hover {
+			background: var(--wp-gray-5);
+		}
+
+		&.is-selected,
+		&:focus {
+			background: var(--wp-blue-50);
+			color: var(--white-rich);
+			outline: none;
+		}
+	}
+}

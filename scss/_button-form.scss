@@ -1,0 +1,40 @@
+/**
+ * Button Form Styles
+ */
+
+.fleximple-components-popover__row {
+	padding: 12px;
+
+	&:not(:last-child) {
+		border-bottom: 1px solidv var(--wp-gray-5);
+	}
+
+	.components-base-control__field {
+		margin-bottom: 0;
+
+		.components-toggle-control__label {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.fleximple-block-button__inline-link {
+	display: flex;
+	align-items: center;
+	background-color: var(--white);
+	max-width: 300px;
+	margin-top: 4px;
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 10;
+
+	& > .dashicon:first-child {
+		width: 36px;
+	}
+
+	.editor-url-input input {
+		width: auto !important;
+	}
+}

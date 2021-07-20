@@ -1,0 +1,9 @@
+/**
+ * Block Animation Styles
+ */
+
+[class*="fleximple-block-"] {
+	&.is-hidden {
+		visibility: hidden;
+	}
+}

@@ -1,0 +1,22 @@
+{
+	"name": "fleximple-components",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Rodrigo D’Agostino",
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/runtime": "^7.14.6",
+		"@fonticonpicker/react-fonticonpicker": "^1.2.0",
+		"babel-eslint": "^10.1.0",
+		"classnames": "^2.3.1",
+		"eslint": "^7.31.0",
+		"eslint-plugin-jsx-a11y": "^6.4.1",
+		"eslint-plugin-react": "^7.24.0",
+		"react-select": "^4.3.1",
+		"react-transition-group": "^4.4.2"
+	}
+}

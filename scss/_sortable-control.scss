@@ -1,0 +1,88 @@
+/**
+ * Sortable Control Styles
+ */
+
+$default-class-name: "fleximple-components-sortable-control";
+
+.fleximple-components-sortable-control {
+	margin-bottom: 24px;
+
+	&:last-child {
+		margin-bottom: 8px;
+	}
+
+	&__sortable-list + &__item {
+		margin-top: 8px;
+	}
+
+	&__sortable-list + &__sortable-list {
+		margin-top: 24px;
+	}
+
+	&__sortable-list &__sortable-list {
+		margin-left: 24px;
+	}
+
+	&__item {
+		display: flex;
+		border: 1px solid var(--wp-gray-5);
+		margin-bottom: 8px;
+		user-select: none;
+
+		&:hover {
+			background-color: var(--wp-gray-0);
+		}
+
+		&.is-disabled {
+			.fleximple-components-sortable-control__label {
+				padding-left: 10px;
+			}
+		}
+	}
+
+	&__drag-handle {
+		display: flex;
+		align-items: center;
+		padding: 8px 10px;
+		cursor: grab;
+
+		svg {
+			fill: currentColor;
+		}
+
+		&:hover,
+		&:hover svg {
+			color: var(--wp-gray-90);
+		}
+	}
+
+	&__label {
+		padding: 10px 0;
+		cursor: default;
+	}
+
+	&__button.has-icon {
+		padding: 10px 12px;
+		margin-left: auto;
+		border-left: 1px solid var(--wp-gray-5);
+		border-radius: 0;
+		height: 100%;
+
+		.dashicon {
+			margin: 0;
+		}
+	}
+
+	&__helper {
+		background-color: white;
+		@include box-shadow(1);
+		z-index: 9999;
+	}
+
+	.components-icon-button:not(:disabled):not([aria-disabled="true"]):not(.is-default) {
+		&:hover {
+			background-color: transparent;
+			box-shadow: none;
+		}
+	}
+}

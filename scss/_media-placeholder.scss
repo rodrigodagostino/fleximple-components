@@ -1,0 +1,21 @@
+/**
+ * Image Placeholder Styles
+ */
+
+.fleximple-components__media-placeholder {
+	background-color: var(--wp-gray-5);
+	border: 1px dashed var(--wp-gray-10);
+	padding: 16px;
+
+	&.is-active {
+		background-color: transparent;
+		border: none;
+		padding: 0;
+
+		.components-button {
+			padding: 0;
+			height: 100%;
+			vertical-align: middle; // Removes blank space below.
+		}
+	}
+}

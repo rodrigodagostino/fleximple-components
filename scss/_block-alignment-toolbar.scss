@@ -1,0 +1,276 @@
+/**
+ * Block Alignment Styles
+ */
+
+[class^="fleximple-block-"] {
+	$targets: sm, md, lg;
+	$alignments: left, center, right;
+	$row-alignments: left, center, right, space-evenly, space-around,
+		space-between;
+	$column-alignments: (top, flex-start) (center, center) (bottom, flex-end)
+		(space-evenly, space-evenly) (space-around, space-around)
+		(space-between, space-between);
+
+	&[class*="block-align-"] {
+		display: flex;
+
+		& > [class$="__inner"] {
+			display: flex;
+
+			&
+				> [class$="__content"]
+				> .block-editor-inner-blocks
+				> .block-editor-block-list__layout
+				> .wp-block,
+			&
+				> [class$="__content"]
+				> .block-editor-inner-blocks
+				> .block-editor-block-list__layout
+				> [class^="fleximple-block-"] {
+				max-width: none;
+				width: 100%;
+			}
+		}
+
+		&.direction-h--sm {
+			& > [class$="__inner"] {
+				flex-direction: row;
+				align-items: center;
+			}
+
+			&.is-reversed--sm > [class$="__inner"] {
+				flex-direction: row-reverse;
+			}
+		}
+
+		&.direction-v--sm {
+			& > [class$="__inner"] {
+				flex-direction: column;
+			}
+
+			&.is-reversed--sm > [class$="__inner"] {
+				flex-direction: column-reverse;
+			}
+		}
+
+		@media only screen and (min-width: 600px) {
+			&.direction-h--md {
+				& > [class$="__inner"] {
+					flex-direction: row;
+					align-items: center;
+				}
+
+				&.is-reversed--md > [class$="__inner"] {
+					flex-direction: row-reverse;
+				}
+			}
+
+			&.direction-v--md {
+				& > [class$="__inner"] {
+					flex-direction: column;
+				}
+
+				&.is-reversed--md > [class$="__inner"] {
+					flex-direction: column-reverse;
+				}
+			}
+		}
+
+		@media only screen and (min-width: 910px) {
+			&.direction-h--lg {
+				& > [class$="__inner"] {
+					flex-direction: row;
+					align-items: center;
+				}
+
+				&.is-reversed--lg > [class$="__inner"] {
+					flex-direction: row-reverse;
+				}
+			}
+
+			&.direction-v--lg {
+				[class$="__inner"] {
+					flex-direction: column;
+				}
+
+				&.is-reversed--lg > [class$="__inner"] {
+					flex-direction: column-reverse;
+				}
+			}
+		}
+	}
+
+	@each $align in $alignments {
+		&.block-align-h-#{$align} {
+			justify-content: $align;
+		}
+	}
+
+	@each $bp in $targets {
+		@if $bp== "sm" {
+			@each $align in $alignments {
+				&.block-align-#{$align}--#{$bp},
+				&.block-align-#{$align}--#{$bp} > [class$="__inner"] {
+					flex-direction: row;
+					justify-content: $align;
+				}
+
+				&.block-align-#{$align}--#{$bp}.direction-v-#{$bp}
+					> [class$="__inner"] {
+					@if $align== "left" {
+						align-items: flex-start;
+					}
+
+					@if $align== "center" {
+						align-items: center;
+					}
+
+					@if $align== "right" {
+						align-items: flex-end;
+					}
+				}
+			}
+		}
+
+		@if $bp== "md" {
+			@media only screen and (min-width: 600px) {
+				@each $align in $alignments {
+					&.block-align-#{$align}--#{$bp},
+					&.block-align-#{$align}--#{$bp} > [class$="__inner"] {
+						flex-direction: row;
+						justify-content: $align;
+					}
+
+					&.block-align-#{$align}--#{$bp}.direction-v-#{$bp}
+						> [class$="__inner"] {
+						@if $align== "left" {
+							align-items: flex-start;
+						}
+
+						@if $align== "center" {
+							align-items: center;
+						}
+
+						@if $align== "right" {
+							align-items: flex-end;
+						}
+					}
+				}
+			}
+		}
+
+		@if $bp== "lg" {
+			@media only screen and (min-width: 910px) {
+				@each $align in $alignments {
+					&.block-align-#{$align}--#{$bp},
+					&.block-align-#{$align}--#{$bp} > [class$="__inner"] {
+						flex-direction: row;
+						justify-content: $align;
+					}
+
+					&.block-align-#{$align}--#{$bp}.direction-v-#{$bp}
+						> [class$="__inner"] {
+						@if $align== "left" {
+							align-items: flex-start;
+						}
+
+						@if $align== "center" {
+							align-items: center;
+						}
+
+						@if $align== "right" {
+							align-items: flex-end;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@each $bp in $targets {
+		@if $bp== "sm" {
+			@each $align in $row-alignments {
+				&.block-align-h-#{$align}--#{$bp},
+				&.block-align-h-#{$align}--#{$bp} > [class$="__inner"] {
+					justify-content: $align;
+				}
+			}
+		}
+
+		@if $bp== "md" {
+			@media only screen and (min-width: 600px) {
+				@each $align in $row-alignments {
+					&.block-align-h-#{$align}--#{$bp},
+					&.block-align-h-#{$align}--#{$bp} > [class$="__inner"] {
+						justify-content: $align;
+					}
+				}
+			}
+		}
+
+		@if $bp== "lg" {
+			@media only screen and (min-width: 910px) {
+				@each $align in $row-alignments {
+					&.block-align-h-#{$align}--#{$bp},
+					&.block-align-h-#{$align}--#{$bp} > [class$="__inner"] {
+						justify-content: $align;
+					}
+				}
+			}
+		}
+	}
+
+	@each $bp in $targets {
+		@if $bp== "sm" {
+			@each $label, $align in $column-alignments {
+				&.block-align-v-#{$label}--#{$bp},
+				&.block-align-v-#{$label}--#{$bp}
+					> [class$="__inner"]
+					> [class$="__content"],
+				&.block-align-v-#{$label}--#{$bp}
+					> [class$="__inner"]
+					> [class$="__content"]
+					> .block-editor-inner-blocks
+					> .block-editor-block-list__layout {
+					justify-content: $align;
+				}
+			}
+		}
+
+		@if $bp== "md" {
+			@media only screen and (min-width: 600px) {
+				@each $label, $align in $column-alignments {
+					&.block-align-v-#{$label}--#{$bp},
+					&.block-align-v-#{$label}--#{$bp}
+						> [class$="__inner"]
+						> [class$="__content"],
+					&.block-align-v-#{$label}--#{$bp}
+						> [class$="__inner"]
+						> [class$="__content"]
+						> .block-editor-inner-blocks
+						> .block-editor-block-list__layout {
+						justify-content: $align;
+					}
+				}
+			}
+		}
+
+		@if $bp== "lg" {
+			@media only screen and (min-width: 910px) {
+				@each $label, $align in $column-alignments {
+					&.block-align-v-#{$label}--#{$bp},
+					&.block-align-v-#{$label}--#{$bp}
+						> [class$="__inner"]
+						> [class$="__content"],
+					&.block-align-v-#{$label}--#{$bp}
+						> [class$="__inner"]
+						> [class$="__content"]
+						> .block-editor-inner-blocks
+						> .block-editor-block-list__layout {
+						justify-content: $align;
+					}
+				}
+			}
+		}
+	}
+}
