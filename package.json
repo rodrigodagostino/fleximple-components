@@ -9,14 +9,15 @@
 	"author": "Rodrigo D’Agostino",
 	"license": "ISC",
 	"devDependencies": {
+		"@babel/eslint-parser": "^7.16.3",
 		"@babel/runtime": "^7.14.6",
 		"@fonticonpicker/react-fonticonpicker": "^1.2.0",
-		"babel-eslint": "^10.1.0",
 		"classnames": "^2.3.1",
-		"eslint": "^7.31.0",
+		"eslint": "^8.4.0",
 		"eslint-plugin-jsx-a11y": "^6.4.1",
 		"eslint-plugin-react": "^7.24.0",
-		"react-select": "^4.3.1",
-		"react-transition-group": "^4.4.2"
+		"react": "^16.14.0",
+		"react-dom": "^16.14.0",
+		"react-select": "^4.3.1"
 	}
 }
