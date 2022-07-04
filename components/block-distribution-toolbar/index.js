@@ -16,66 +16,70 @@ import { compose } from '@wordpress/compose'
  */
 import { toolbarIcons } from '../interface-icons'
 
-
 const BLOCK_DISTRIBUTIONS_CONTROLS = {
   left: {
     icon: toolbarIcons.distributionLeft,
-    title: __( 'Distribute left', 'fleximpleblocks' ),
+    title: __('Distribute left', 'fleximpleblocks'),
   },
   center: {
     icon: toolbarIcons.distributionCenter,
-    title: __( 'Distribute center', 'fleximpleblocks' ),
+    title: __('Distribute center', 'fleximpleblocks'),
   },
   right: {
     icon: toolbarIcons.distributionRight,
-    title: __( 'Distribute right', 'fleximpleblocks' ),
+    title: __('Distribute right', 'fleximpleblocks'),
   },
   full: {
     icon: toolbarIcons.distributionFull,
-    title: __( 'Distribute full', 'fleximpleblocks' ),
+    title: __('Distribute full', 'fleximpleblocks'),
   },
 }
 
-const DEFAULT_CONTROLS = [ 'left', 'center', 'right', 'full' ]
+const DEFAULT_CONTROLS = ['left', 'center', 'right', 'full']
 const DEFAULT_CONTROL = 'left'
 
-export function BlockDistributionToolbar({ isCollapsed, value, onChange, controls = DEFAULT_CONTROLS }) {
-  function applyOrUnset( alignment ) {
-    return () => onChange( value === alignment ? undefined : alignment )
+export function BlockDistributionToolbar({
+  isCollapsed,
+  value,
+  onChange,
+  controls = DEFAULT_CONTROLS,
+}) {
+  function applyOrUnset(alignment) {
+    return () => onChange(value === alignment ? undefined : alignment)
   }
 
-  const activeAlignment = BLOCK_DISTRIBUTIONS_CONTROLS[ value ]
-  const defaultAlignmentControl = BLOCK_DISTRIBUTIONS_CONTROLS[ DEFAULT_CONTROL ]
+  const activeAlignment = BLOCK_DISTRIBUTIONS_CONTROLS[value]
+  const defaultAlignmentControl = BLOCK_DISTRIBUTIONS_CONTROLS[DEFAULT_CONTROL]
 
   return (
     <ToolbarGroup
-      isCollapsed={ isCollapsed }
-      icon={ activeAlignment ? activeAlignment.icon : defaultAlignmentControl.icon }
-      label={ __( 'Change distribution', 'fleximpleblocks' ) }
-      controls={
-        controls.map( control => {
-          return {
-            ...BLOCK_DISTRIBUTIONS_CONTROLS[ control ],
-            isActive: value === control,
-            onClick: applyOrUnset( control ),
-          }
-        })
+      isCollapsed={isCollapsed}
+      icon={
+        activeAlignment ? activeAlignment.icon : defaultAlignmentControl.icon
       }
+      label={__('Change distribution', 'fleximpleblocks')}
+      controls={controls.map((control) => {
+        return {
+          ...BLOCK_DISTRIBUTIONS_CONTROLS[control],
+          isActive: value === control,
+          onClick: applyOrUnset(control),
+        }
+      })}
     />
   )
 }
 
 export default compose(
   withViewportMatch({ isLargeViewport: 'medium' }),
-  withSelect( ( select, { clientId, isLargeViewport, isCollapsed }) => {
-    const { getBlockRootClientId, getSettings } = select( 'core/block-editor' )
+  withSelect((select, { clientId, isLargeViewport, isCollapsed }) => {
+    const { getBlockRootClientId, getSettings } = select('core/block-editor')
     const settings = getSettings()
     return {
       wideControlsEnabled: settings.alignWide,
-      isCollapsed: isCollapsed || !isLargeViewport ||
-				!settings.hasFixedToolbar &&
-				getBlockRootClientId( clientId )
-      ,
+      isCollapsed:
+        isCollapsed ||
+        !isLargeViewport ||
+        (!settings.hasFixedToolbar && getBlockRootClientId(clientId)),
     }
-  }),
-)( BlockDistributionToolbar )
+  })
+)(BlockDistributionToolbar)

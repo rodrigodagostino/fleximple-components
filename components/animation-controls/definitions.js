@@ -156,16 +156,6 @@ export const delayList = [
   'delay-5s',
 ]
 
-export const durationList = [
-  'slow',
-  'slower',
-  'fast',
-  'faster',
-]
+export const durationList = ['slow', 'slower', 'fast', 'faster']
 
-export const repeatList = [
-  'repeat-1',
-  'repeat-2',
-  'repeat-3',
-  'infinite',
-]
+export const repeatList = ['repeat-1', 'repeat-2', 'repeat-3', 'infinite']

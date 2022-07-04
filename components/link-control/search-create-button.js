@@ -16,20 +16,20 @@ export const LinkControlSearchCreate = ({
   itemProps,
   isSelected,
 }) => {
-  if ( !searchTerm ) {
+  if (!searchTerm) {
     return null
   }
 
   return (
     <Button
-      { ...itemProps }
-      className={ classnames(
+      {...itemProps}
+      className={classnames(
         'block-editor-link-control__search-create block-editor-link-control__search-item',
         {
           'is-selected': isSelected,
-        },
-      ) }
-      onClick={ onClick }
+        }
+      )}
+      onClick={onClick}
     >
       <Icon
         className="block-editor-link-control__search-item-icon"
@@ -38,14 +38,14 @@ export const LinkControlSearchCreate = ({
 
       <span className="block-editor-link-control__search-item-header">
         <span className="block-editor-link-control__search-item-title">
-          { createInterpolateElement(
+          {createInterpolateElement(
             sprintf(
               /* translators: %s: search term. */
-              __( 'New page: <mark>%s</mark>' ),
-              searchTerm,
+              __('New page: <mark>%s</mark>'),
+              searchTerm
             ),
-            { mark: <mark /> },
-          ) }
+            { mark: <mark /> }
+          )}
         </span>
       </span>
     </Button>

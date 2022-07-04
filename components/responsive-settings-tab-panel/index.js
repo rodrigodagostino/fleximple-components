@@ -18,26 +18,32 @@ export function ResponsiveSettingsTabPanel({ initialTabName, children }) {
     <TabPanel
       className="fleximple-components-tab-panel fleximple-components"
       activeClass="is-active"
-      initialTabName={ initialTabName }
-      tabs={ [
+      initialTabName={initialTabName}
+      tabs={[
         {
           name: 'small',
-          title: <Tooltip text={ __( 'Small screens' ) }>{ tabIcons.mobile }</Tooltip>,
+          title: (
+            <Tooltip text={__('Small screens')}>{tabIcons.mobile}</Tooltip>
+          ),
           className: 'fleximple-components-tab-panel__tab tab--small',
         },
         {
           name: 'medium',
-          title: <Tooltip text={ __( 'Medium screens' ) }>{ tabIcons.tablet }</Tooltip>,
+          title: (
+            <Tooltip text={__('Medium screens')}>{tabIcons.tablet}</Tooltip>
+          ),
           className: 'fleximple-components-tab-panel__tab tab-medium',
         },
         {
           name: 'large',
-          title: <Tooltip text={ __( 'Large screens' ) }>{ tabIcons.desktop }</Tooltip>,
+          title: (
+            <Tooltip text={__('Large screens')}>{tabIcons.desktop}</Tooltip>
+          ),
           className: 'fleximple-components-tab-panel__tab tab-large',
         },
-      ] }
+      ]}
     >
-      { children }
+      {children}
     </TabPanel>
   )
 }

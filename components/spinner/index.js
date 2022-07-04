@@ -7,21 +7,25 @@
  */
 import classnames from 'classnames'
 
-
 export default function Spinner({ size }) {
-
-  const classes = classnames(
-    'fleximple-components-spinner', {
-      [ 'size-small' ]: size === 'small',
-      [ 'size-medium' ]: size === 'medium',
-      [ 'size-large' ]: size === 'large',
-    },
-  )
+  const classes = classnames('fleximple-components-spinner', {
+    ['size-small']: size === 'small',
+    ['size-medium']: size === 'medium',
+    ['size-large']: size === 'large',
+  })
 
   return (
-    <div className={ classes }>
+    <div className={classes}>
       <svg className="circular" viewBox="25 25 50 50">
-        <circle className="path" cx="50" cy="50" r="20" fill="none" strokeWidth="6" strokeMiterlimit="10" />
+        <circle
+          className="path"
+          cx="50"
+          cy="50"
+          r="20"
+          fill="none"
+          strokeWidth="6"
+          strokeMiterlimit="10"
+        />
       </svg>
     </div>
   )

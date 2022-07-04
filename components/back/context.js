@@ -26,7 +26,7 @@ export { Provider as BlockEditContextProvider }
  * @return {Object} Block edit context
  */
 export function useBlockEditContext() {
-  return useContext( Context )
+  return useContext(Context)
 }
 
 /**
@@ -39,19 +39,19 @@ export function useBlockEditContext() {
  *
  * @return {WPComponent} Enhanced component with injected context as props.
  */
-export const withBlockEditContext = mapContextToProps =>
-  createHigherOrderComponent( OriginalComponent => {
-    return props => (
+export const withBlockEditContext = (mapContextToProps) =>
+  createHigherOrderComponent((OriginalComponent) => {
+    return (props) => (
       <Consumer>
-        { context => (
+        {(context) => (
           <OriginalComponent
-            { ...props }
-            { ...mapContextToProps( context, props ) }
+            {...props}
+            {...mapContextToProps(context, props)}
           />
-        ) }
+        )}
       </Consumer>
     )
-  }, 'withBlockEditContext' )
+  }, 'withBlockEditContext')
 
 /**
  * A Higher Order Component used to render conditionally the wrapped
@@ -62,14 +62,12 @@ export const withBlockEditContext = mapContextToProps =>
  * @return {WPComponent} Component which renders only when the BlockEdit is selected.
  */
 export const ifBlockEditSelected = createHigherOrderComponent(
-  OriginalComponent => {
-    return props => (
+  (OriginalComponent) => {
+    return (props) => (
       <Consumer>
-        { ({ isSelected }) =>
-          isSelected && <OriginalComponent { ...props } />
-        }
+        {({ isSelected }) => isSelected && <OriginalComponent {...props} />}
       </Consumer>
     )
   },
-  'ifBlockEditSelected',
+  'ifBlockEditSelected'
 )

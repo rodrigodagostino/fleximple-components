@@ -6,14 +6,8 @@
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n'
-import {
-  Dashicon,
-  Dropdown,
-  Button,
-  RadioControl,
-} from '@wordpress/components'
+import { Dashicon, Dropdown, Button, RadioControl } from '@wordpress/components'
 import { URLInput } from '@wordpress/block-editor'
-
 
 export function ButtonForm({
   attributes: { url, linkTarget },
@@ -23,49 +17,61 @@ export function ButtonForm({
   return (
     <form
       className="fleximple-block-button__inline-link"
-      onSubmit={ event => event.preventDefault() }>
+      onSubmit={(event) => event.preventDefault()}
+    >
       <Dashicon icon="admin-links" />
 
       <URLInput
-        value={ url }
+        value={url}
         /* eslint-disable jsx-a11y/no-autofocus */
         // Disable Reason: The rule is meant to prevent enabling auto-focus, not disabling it.
-        autoFocus={ false }
+        autoFocus={false}
         /* eslint-enable jsx-a11y/no-autofocus */
-        onChange={ value => setAttributes({ url: value }) }
-        disableSuggestions={ !isSelected }
+        onChange={(value) => setAttributes({ url: value })}
+        disableSuggestions={!isSelected}
         isFullWidth
       />
 
       <Button
-        icon="editor-break" label={ __( 'Apply', 'fleximpleblocks' ) } type="submit"
+        icon="editor-break"
+        label={__('Apply', 'fleximpleblocks')}
+        type="submit"
       />
 
       <Dropdown
         className="editor-block-settings-menu__popover block-editor-block-settings-menu__popover"
         position="bottom left"
-        renderToggle={ ({ isOpen, onToggle }) => (
+        renderToggle={({ isOpen, onToggle }) => (
           <Button
             icon="ellipsis"
-            label={ __( 'More options', 'fleximpleblocks' ) }
-            onClick={ onToggle }
-            aria-expanded={ isOpen }
+            label={__('More options', 'fleximpleblocks')}
+            onClick={onToggle}
+            aria-expanded={isOpen}
           />
-        ) }
+        )}
         // eslint-disable-next-line no-unused-vars
-        renderContent={ ({ onClose }) => (
+        renderContent={({ onClose }) => (
           <div className="fleximple-components-popover__row">
             <RadioControl
-              selected={ linkTarget }
-              options={ [
-                { label: __( 'Open in current tab', 'fleximpleblocks' ), value: '_self' },
-                { label: __( 'Open in new tab', 'fleximpleblocks' ), value: '_blank' },
-                { label: __( 'Open in modal window', 'fleximpleblocks' ), value: '_modal' },
-              ] }
-              onChange={ value => setAttributes({ linkTarget: value }) }
+              selected={linkTarget}
+              options={[
+                {
+                  label: __('Open in current tab', 'fleximpleblocks'),
+                  value: '_self',
+                },
+                {
+                  label: __('Open in new tab', 'fleximpleblocks'),
+                  value: '_blank',
+                },
+                {
+                  label: __('Open in modal window', 'fleximpleblocks'),
+                  value: '_modal',
+                },
+              ]}
+              onChange={(value) => setAttributes({ linkTarget: value })}
             />
           </div>
-        ) }
+        )}
       />
     </form>
   )

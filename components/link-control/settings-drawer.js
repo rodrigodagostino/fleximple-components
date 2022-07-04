@@ -12,7 +12,7 @@ import { ToggleControl, VisuallyHidden } from '@wordpress/components'
 const defaultSettings = [
   {
     id: 'opensInNewTab',
-    title: __( 'Open in new tab' ),
+    title: __('Open in new tab'),
   },
 ]
 
@@ -21,33 +21,33 @@ const LinkControlSettingsDrawer = ({
   onChange = noop,
   settings = defaultSettings,
 }) => {
-  if ( !settings || !settings.length ) {
+  if (!settings || !settings.length) {
     return null
   }
 
-  const handleSettingChange = setting => newValue => {
+  const handleSettingChange = (setting) => (newValue) => {
     onChange({
       ...value,
-      [ setting.id ]: newValue,
+      [setting.id]: newValue,
     })
   }
 
-  const theSettings = settings.map( setting => (
+  const theSettings = settings.map((setting) => (
     <ToggleControl
       className="block-editor-link-control__setting"
-      key={ setting.id }
-      label={ setting.title }
-      onChange={ handleSettingChange( setting ) }
-      checked={ value ? !!value[ setting.id ] : false }
+      key={setting.id}
+      label={setting.title}
+      onChange={handleSettingChange(setting)}
+      checked={value ? !!value[setting.id] : false}
     />
-  ) )
+  ))
 
   return (
     <fieldset className="block-editor-link-control__settings">
       <VisuallyHidden as="legend">
-        { __( 'Currently selected link settings' ) }
+        {__('Currently selected link settings')}
       </VisuallyHidden>
-      { theSettings }
+      {theSettings}
     </fieldset>
   )
 }
