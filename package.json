@@ -10,13 +10,13 @@
   "author": "Rodrigo D’Agostino",
   "license": "ISC",
   "devDependencies": {
-    "@babel/eslint-parser": "7.18.2",
-    "@babel/runtime": "7.18.6",
+    "@babel/eslint-parser": "7.18.9",
+    "@babel/runtime": "7.18.9",
     "classnames": "2.3.1",
-    "eslint": "8.19.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-jsx-a11y": "6.6.0",
-    "eslint-plugin-prettier": "^4.2.1",
+    "eslint": "8.20.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-jsx-a11y": "6.6.1",
+    "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-react": "7.30.1",
     "react-select": "5.4.0"
   }
