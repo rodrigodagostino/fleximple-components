@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames'
+import classNames from 'classnames'
 
 /**
  * WordPress dependencies
@@ -23,7 +23,7 @@ export const LinkControlSearchCreate = ({
   return (
     <Button
       {...itemProps}
-      className={classnames(
+      className={classNames(
         'block-editor-link-control__search-create block-editor-link-control__search-item',
         {
           'is-selected': isSelected,

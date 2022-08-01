@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames'
+import classNames from 'classnames'
 import { noop, startsWith } from 'lodash'
 
 /**
@@ -87,7 +87,6 @@ const makeCancelable = (promise) => {
  *                                    providing a custom `settings` prop.
  */
 
-/* eslint-disable jsdoc/valid-types */
 /**
  * Custom settings values associated with a link.
  *
@@ -104,7 +103,6 @@ const makeCancelable = (promise) => {
  * @property {string} title Human-readable label to show in user interface.
  */
 
-/* eslint-disable jsdoc/valid-types */
 /**
  * Properties associated with a link control value, composed as a union of the
  * default properties and any custom settings values.
@@ -422,7 +420,7 @@ function LinkControl({
     isLoading,
     isInitialSuggestions,
   }) => {
-    const resultsListClasses = classnames(
+    const resultsListClasses = classNames(
       'block-editor-link-control__search-results',
       {
         'is-loading': isLoading,
@@ -550,7 +548,7 @@ function LinkControl({
           <div
             aria-label={__('Currently selected')}
             aria-selected="true"
-            className={classnames('block-editor-link-control__search-item', {
+            className={classNames('block-editor-link-control__search-item', {
               'is-current': true,
             })}
           >

@@ -2,7 +2,7 @@
  * External dependencies
  */
 import { throttle, isFunction } from 'lodash'
-import classnames from 'classnames'
+import classNames from 'classnames'
 import scrollIntoView from 'dom-scroll-into-view'
 
 /**
@@ -392,7 +392,7 @@ class URLInput extends Component {
       <BaseControl
         label={label}
         id={id}
-        className={classnames('block-editor-url-input', className, {
+        className={classNames('block-editor-url-input', className, {
           'is-full-width': isFullWidth,
           'has-border': hasBorder,
         })}
@@ -443,7 +443,7 @@ class URLInput extends Component {
             <Popover position="bottom" noArrow focusOnMount={false}>
               <div
                 {...suggestionsListProps}
-                className={classnames(
+                className={classNames(
                   'block-editor-url-input__suggestions',
                   `${className}__suggestions`
                 )}
@@ -452,7 +452,7 @@ class URLInput extends Component {
                   <Button
                     {...buildSuggestionItemProps(suggestion, index)}
                     key={suggestion.id}
-                    className={classnames(
+                    className={classNames(
                       'block-editor-url-input__suggestion',
                       {
                         'is-selected': index === selectedSuggestion,

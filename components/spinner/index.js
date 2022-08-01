@@ -5,10 +5,10 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames'
+import classNames from 'classnames'
 
 export default function Spinner({ size }) {
-  const classes = classnames('fleximple-components-spinner', {
+  const classes = classNames('fleximple-components-spinner', {
     ['size-small']: size === 'small',
     ['size-medium']: size === 'medium',
     ['size-large']: size === 'large',
