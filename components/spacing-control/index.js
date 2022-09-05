@@ -3,11 +3,16 @@
  */
 
 /**
+ * External dependencies
+ */
+import classNames from 'classnames'
+
+/**
  * WordPress dependencies
  */
 import { RangeControl, SelectControl } from '@wordpress/components'
 
-export function SpacingControls({
+export function SpacingControl({
   valueLabel,
   unitLabel,
   className,
@@ -19,16 +24,20 @@ export function SpacingControls({
   onChange,
   isResponsive = true,
 }) {
+  const classes = classNames('fleximple-components-spacing-control', {
+    [className]: className,
+    'fleximple-components-control__row': true,
+    'gap-h-none': true,
+    'width-80-20': true,
+    'flex-end': true,
+  })
+
   if (!isResponsive) {
     return (
-      <div
-        className={`fleximple-components-spacing-controls fleximple-components-control__row gap-h-none width-80-20 flex-end${
-          className ? ' ' + className : ''
-        }`}
-      >
+      <div className={classes}>
         <RangeControl
           label={valueLabel}
-          className="fleximple-components-spacing-controls__value-range"
+          className="fleximple-components-spacing-control__value-range"
           initialPosition={initialPosition}
           min={min === 0 ? min : attribute.unit === 'px' ? min : min / 10}
           max={attribute.unit === 'px' ? max : max / 10}
@@ -45,7 +54,7 @@ export function SpacingControls({
           label={unitLabel}
           labelPosition="top"
           hideLabelFromVision={true}
-          className="fleximple-components-spacing-controls__unit-select"
+          className="fleximple-components-spacing-control__unit-select"
           value={attribute.unit}
           options={[
             { label: 'px', value: 'px' },
@@ -66,14 +75,10 @@ export function SpacingControls({
   }
 
   return (
-    <div
-      className={`fleximple-components-spacing-controls fleximple-components-control__row gap-h-none width-80-20 flex-end${
-        className ? ' ' + className : ''
-      }`}
-    >
+    <div className={classes}>
       <RangeControl
         label={valueLabel}
-        className="fleximple-components-spacing-controls__value-range"
+        className="fleximple-components-spacing-control__value-range"
         initialPosition={initialPosition}
         min={min === 0 ? min : attribute[target].unit === 'px' ? min : min / 10}
         max={attribute[target].unit === 'px' ? max : max / 10}
@@ -94,7 +99,7 @@ export function SpacingControls({
         label={unitLabel}
         labelPosition="top"
         hideLabelFromVision={true}
-        className="fleximple-components-spacing-controls__unit-select"
+        className="fleximple-components-spacing-control__unit-select"
         value={attribute[target].unit}
         options={[
           { label: 'px', value: 'px' },
@@ -114,4 +119,4 @@ export function SpacingControls({
   )
 }
 
-export default SpacingControls
+export default SpacingControl
