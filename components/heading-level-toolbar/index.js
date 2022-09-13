@@ -7,7 +7,6 @@ import { range } from 'lodash'
  * WordPress dependencies
  */
 import { __, sprintf } from '@wordpress/i18n'
-import { Component } from '@wordpress/element'
 import { ToolbarGroup } from '@wordpress/components'
 
 /**
@@ -15,8 +14,14 @@ import { ToolbarGroup } from '@wordpress/components'
  */
 import HeadingLevelIcon from './icon'
 
-class HeadingToolbar extends Component {
-  createLevelControl(targetLevel, selectedLevel, onChange) {
+const HeadingToolbar = ({
+  isCollapsed = true,
+  minLevel,
+  maxLevel,
+  selectedLevel,
+  onChange,
+}) => {
+  const createLevelControl = (targetLevel, selectedLevel, onChange) => {
     const isActive = targetLevel === selectedLevel
     return {
       icon: <HeadingLevelIcon level={targetLevel} isPressed={isActive} />,
@@ -27,26 +32,16 @@ class HeadingToolbar extends Component {
     }
   }
 
-  render() {
-    const {
-      isCollapsed = true,
-      minLevel,
-      maxLevel,
-      selectedLevel,
-      onChange,
-    } = this.props
-
-    return (
-      <ToolbarGroup
-        isCollapsed={isCollapsed}
-        icon={<HeadingLevelIcon level={selectedLevel} />}
-        controls={range(minLevel, maxLevel).map((index) =>
-          this.createLevelControl(index, selectedLevel, onChange)
-        )}
-        label={__('Change heading level')}
-      />
-    )
-  }
+  return (
+    <ToolbarGroup
+      isCollapsed={isCollapsed}
+      icon={<HeadingLevelIcon level={selectedLevel} />}
+      controls={range(minLevel, maxLevel).map((index) =>
+        createLevelControl(index, selectedLevel, onChange)
+      )}
+      label={__('Change heading level')}
+    />
+  )
 }
 
 export default HeadingToolbar
