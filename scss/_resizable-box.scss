@@ -3,15 +3,15 @@
  */
 
 [class*="fleximple-block-"] {
-	.components-resizable-box__inner {
-		.components-resizable-box__handle {
-			display: none;
-		}
-	}
+  .components-resizable-box__inner {
+    .components-resizable-box__handle {
+      display: none;
+    }
+  }
 
-	&.is-selected {
-		.components-resizable-box__inner .components-resizable-box__handle {
-			display: block;
-		}
-	}
+  &.is-selected {
+    .components-resizable-box__inner .components-resizable-box__handle {
+      display: block;
+    }
+  }
 }

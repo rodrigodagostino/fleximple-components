@@ -3,58 +3,58 @@
  */
 
 [class*="fleximple-block-"] {
-	$targets: sm, md, lg;
-	$distributions: (left, 0, auto) (center, auto, auto) (right, auto, 0) (full);
+  $targets: sm, md, lg;
+  $distributions: (left, 0, auto) (center, auto, auto) (right, auto, 0) (full);
 
-	@each $bp in $targets {
-		@if $bp == "sm" {
-			@each $label, $margin-left, $margin-right in $distributions {
-				&.distribution-#{$label}--#{$bp} [class*="__content"] {
-					@if $label == "full" {
-						width: 100%;
-					}
-					@if $margin-left {
-						margin-left: $margin-left;
-					}
-					@if $margin-right {
-						margin-right: $margin-right;
-					}
-				}
-			}
-		}
-		@if $bp == "md" {
-			@media only screen and (min-width: 600px) {
-				@each $label, $margin-left, $margin-right in $distributions {
-					&.distribution-#{$label}--#{$bp} [class*="__content"] {
-						@if $label == "full" {
-							width: 100%;
-						}
-						@if $margin-left {
-							margin-left: $margin-left;
-						}
-						@if $margin-right {
-							margin-right: $margin-right;
-						}
-					}
-				}
-			}
-		}
-		@if $bp == "lg" {
-			@media only screen and (min-width: 910px) {
-				@each $label, $margin-left, $margin-right in $distributions {
-					&.distribution-#{$label}--#{$bp} [class*="__content"] {
-						@if $label == "full" {
-							width: 100%;
-						}
-						@if $margin-left {
-							margin-left: $margin-left;
-						}
-						@if $margin-right {
-							margin-right: $margin-right;
-						}
-					}
-				}
-			}
-		}
-	}
+  @each $bp in $targets {
+    @if $bp == "sm" {
+      @each $label, $margin-left, $margin-right in $distributions {
+        &.distribution-#{$label}--#{$bp} [class*="__content"] {
+          @if $label == "full" {
+            width: 100%;
+          }
+          @if $margin-left {
+            margin-left: $margin-left;
+          }
+          @if $margin-right {
+            margin-right: $margin-right;
+          }
+        }
+      }
+    }
+    @if $bp == "md" {
+      @media only screen and (min-width: 600px) {
+        @each $label, $margin-left, $margin-right in $distributions {
+          &.distribution-#{$label}--#{$bp} [class*="__content"] {
+            @if $label == "full" {
+              width: 100%;
+            }
+            @if $margin-left {
+              margin-left: $margin-left;
+            }
+            @if $margin-right {
+              margin-right: $margin-right;
+            }
+          }
+        }
+      }
+    }
+    @if $bp == "lg" {
+      @media only screen and (min-width: 910px) {
+        @each $label, $margin-left, $margin-right in $distributions {
+          &.distribution-#{$label}--#{$bp} [class*="__content"] {
+            @if $label == "full" {
+              width: 100%;
+            }
+            @if $margin-left {
+              margin-left: $margin-left;
+            }
+            @if $margin-right {
+              margin-right: $margin-right;
+            }
+          }
+        }
+      }
+    }
+  }
 }
