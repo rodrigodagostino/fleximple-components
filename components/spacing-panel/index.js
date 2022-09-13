@@ -48,10 +48,11 @@ export function SpacingPanel({
   if (!isResponsive) {
     return (
       <PanelBody title={title} initialOpen={initialOpen}>
-        {controls.map((control) => {
+        {controls.map((control, index) => {
           if ('gap' === control) {
             return (
               <SpacingControl
+                key={index}
                 valueLabel={__('Gap size', 'fleximpleblocks')}
                 unitLabel={__('Gap size unit', 'fleximpleblocks')}
                 initialPosition={0}
@@ -67,6 +68,7 @@ export function SpacingPanel({
           if ('min-height' === control) {
             return (
               <SpacingControl
+                key={index}
                 valueLabel={__('Minimum height', 'fleximpleblocks')}
                 unitLabel={__('Minimum height unit', 'fleximpleblocks')}
                 className="gap-v-small"
@@ -83,6 +85,7 @@ export function SpacingPanel({
           if ('content-width' === control) {
             return (
               <SpacingControl
+                key={index}
                 valueLabel={__('Content width', 'fleximpleblocks')}
                 unitLabel={__('Content width unit', 'fleximpleblocks')}
                 className="gap-v-small"
@@ -99,6 +102,7 @@ export function SpacingPanel({
           if ('content-gap' === control) {
             return (
               <SpacingControl
+                key={index}
                 valueLabel={__('Content gap', 'fleximpleblocks')}
                 unitLabel={__('Content gap unit', 'fleximpleblocks')}
                 initialPosition={0}
@@ -114,6 +118,7 @@ export function SpacingPanel({
           if ('margin' === control) {
             return (
               <SpacingControl
+                key={index}
                 valueLabel={__('Margin', 'fleximpleblocks')}
                 unitLabel={__('Margin unit', 'fleximpleblocks')}
                 className="gap-v-small"
@@ -130,6 +135,7 @@ export function SpacingPanel({
           if ('margin-top' === control) {
             return (
               <SpacingControl
+                key={index}
                 valueLabel={__('Top margin', 'fleximpleblocks')}
                 unitLabel={__('Top margin unit', 'fleximpleblocks')}
                 className="gap-v-small"
@@ -146,6 +152,7 @@ export function SpacingPanel({
           if ('margin-left' === control) {
             return (
               <SpacingControl
+                key={index}
                 valueLabel={__('Left margin', 'fleximpleblocks')}
                 unitLabel={__('Left margin unit', 'fleximpleblocks')}
                 className="gap-v-small"
@@ -162,6 +169,7 @@ export function SpacingPanel({
           if ('margin-right' === control) {
             return (
               <SpacingControl
+                key={index}
                 valueLabel={__('Right margin', 'fleximpleblocks')}
                 unitLabel={__('Right margin unit', 'fleximpleblocks')}
                 className="gap-v-small"
@@ -178,6 +186,7 @@ export function SpacingPanel({
           if ('margin-bottom' === control) {
             return (
               <SpacingControl
+                key={index}
                 valueLabel={__('Bottom margin', 'fleximpleblocks')}
                 unitLabel={__('Bottom margin unit', 'fleximpleblocks')}
                 initialPosition={0}
@@ -193,6 +202,7 @@ export function SpacingPanel({
           if ('padding' === control) {
             return (
               <SpacingControl
+                key={index}
                 valueLabel={__('Padding', 'fleximpleblocks')}
                 unitLabel={__('Padding unit', 'fleximpleblocks')}
                 className="gap-v-small"
@@ -209,6 +219,7 @@ export function SpacingPanel({
           if ('padding-top' === control) {
             return (
               <SpacingControl
+                key={index}
                 valueLabel={__('Top padding', 'fleximpleblocks')}
                 unitLabel={__('Top padding unit', 'fleximpleblocks')}
                 className="gap-v-small"
@@ -225,6 +236,7 @@ export function SpacingPanel({
           if ('padding-left' === control) {
             return (
               <SpacingControl
+                key={index}
                 valueLabel={__('Left padding', 'fleximpleblocks')}
                 unitLabel={__('Left padding unit', 'fleximpleblocks')}
                 className="gap-v-small"
@@ -241,6 +253,7 @@ export function SpacingPanel({
           if ('padding-right' === control) {
             return (
               <SpacingControl
+                key={index}
                 valueLabel={__('Right padding', 'fleximpleblocks')}
                 unitLabel={__('Right padding unit', 'fleximpleblocks')}
                 className="gap-v-small"
@@ -257,6 +270,7 @@ export function SpacingPanel({
           if ('padding-bottom' === control) {
             return (
               <SpacingControl
+                key={index}
                 valueLabel={__('Bottom padding', 'fleximpleblocks')}
                 unitLabel={__('Bottom padding unit', 'fleximpleblocks')}
                 initialPosition={0}
@@ -278,10 +292,11 @@ export function SpacingPanel({
       <ResponsiveSettingsTabPanel initialTabName="small">
         {(tab) => (
           <>
-            {controls.map((control) => {
+            {controls.map((control, index) => {
               if ('gap' === control) {
                 return (
                   <SpacingControl
+                    key={index}
                     valueLabel={__('Gap size', 'fleximpleblocks')}
                     unitLabel={__('Gap size unit', 'fleximpleblocks')}
                     initialPosition={0}
@@ -297,6 +312,7 @@ export function SpacingPanel({
               if ('min-height' === control) {
                 return (
                   <SpacingControl
+                    key={index}
                     valueLabel={__('Minimum height', 'fleximpleblocks')}
                     unitLabel={__('Minimum height unit', 'fleximpleblocks')}
                     className="gap-v-small"
@@ -313,6 +329,7 @@ export function SpacingPanel({
               if ('content-width' === control) {
                 return (
                   <SpacingControl
+                    key={index}
                     valueLabel={__('Content width', 'fleximpleblocks')}
                     unitLabel={__('Content width unit', 'fleximpleblocks')}
                     className="gap-v-small"
@@ -329,6 +346,7 @@ export function SpacingPanel({
               if ('content-gap' === control) {
                 return (
                   <SpacingControl
+                    key={index}
                     valueLabel={__('Content gap', 'fleximpleblocks')}
                     unitLabel={__('Content gap unit', 'fleximpleblocks')}
                     initialPosition={0}
@@ -344,6 +362,7 @@ export function SpacingPanel({
               if ('margin' === control) {
                 return (
                   <SpacingControl
+                    key={index}
                     valueLabel={__('Margin', 'fleximpleblocks')}
                     unitLabel={__('Margin unit', 'fleximpleblocks')}
                     className="gap-v-small"
@@ -360,6 +379,7 @@ export function SpacingPanel({
               if ('margin-top' === control) {
                 return (
                   <SpacingControl
+                    key={index}
                     valueLabel={__('Top margin', 'fleximpleblocks')}
                     unitLabel={__('Top margin unit', 'fleximpleblocks')}
                     className="gap-v-small"
@@ -376,6 +396,7 @@ export function SpacingPanel({
               if ('margin-left' === control) {
                 return (
                   <SpacingControl
+                    key={index}
                     valueLabel={__('Left margin', 'fleximpleblocks')}
                     unitLabel={__('Left margin unit', 'fleximpleblocks')}
                     className="gap-v-small"
@@ -392,6 +413,7 @@ export function SpacingPanel({
               if ('margin-right' === control) {
                 return (
                   <SpacingControl
+                    key={index}
                     valueLabel={__('Right margin', 'fleximpleblocks')}
                     unitLabel={__('Right margin unit', 'fleximpleblocks')}
                     className="gap-v-small"
@@ -408,6 +430,7 @@ export function SpacingPanel({
               if ('margin-bottom' === control) {
                 return (
                   <SpacingControl
+                    key={index}
                     valueLabel={__('Bottom margin', 'fleximpleblocks')}
                     unitLabel={__('Bottom margin unit', 'fleximpleblocks')}
                     initialPosition={0}
@@ -423,6 +446,7 @@ export function SpacingPanel({
               if ('padding' === control) {
                 return (
                   <SpacingControl
+                    key={index}
                     valueLabel={__('Padding', 'fleximpleblocks')}
                     unitLabel={__('Padding unit', 'fleximpleblocks')}
                     className="gap-v-small"
@@ -439,6 +463,7 @@ export function SpacingPanel({
               if ('padding-top' === control) {
                 return (
                   <SpacingControl
+                    key={index}
                     valueLabel={__('Top padding', 'fleximpleblocks')}
                     unitLabel={__('Top padding unit', 'fleximpleblocks')}
                     className="gap-v-small"
@@ -455,6 +480,7 @@ export function SpacingPanel({
               if ('padding-left' === control) {
                 return (
                   <SpacingControl
+                    key={index}
                     valueLabel={__('Left padding', 'fleximpleblocks')}
                     unitLabel={__('Left padding unit', 'fleximpleblocks')}
                     className="gap-v-small"
@@ -471,6 +497,7 @@ export function SpacingPanel({
               if ('padding-right' === control) {
                 return (
                   <SpacingControl
+                    key={index}
                     valueLabel={__('Right padding', 'fleximpleblocks')}
                     unitLabel={__('Right padding unit', 'fleximpleblocks')}
                     className="gap-v-small"
@@ -487,6 +514,7 @@ export function SpacingPanel({
               if ('padding-bottom' === control) {
                 return (
                   <SpacingControl
+                    key={index}
                     valueLabel={__('Bottom padding', 'fleximpleblocks')}
                     unitLabel={__('Bottom padding unit', 'fleximpleblocks')}
                     initialPosition={0}
