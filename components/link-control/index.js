@@ -2,7 +2,8 @@
  * External dependencies
  */
 import classNames from 'classnames'
-import { noop, startsWith } from 'lodash'
+import { noop } from 'lodash.noop'
+import { startsWith } from 'lodash.startswith'
 
 /**
  * WordPress dependencies

@@ -1,7 +1,8 @@
 /**
  * External dependencies
  */
-import { throttle, isFunction } from 'lodash'
+import { isFunction } from 'lodash.isfunction'
+import { throttle } from 'lodash.throttle'
 import classNames from 'classnames'
 import scrollIntoView from 'dom-scroll-into-view'
 

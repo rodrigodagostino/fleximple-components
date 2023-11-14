@@ -1,9 +1,4 @@
 /**
- * External dependencies
- */
-import { range } from 'lodash'
-
-/**
  * WordPress dependencies
  */
 import { __, sprintf } from '@wordpress/i18n'
@@ -13,6 +8,14 @@ import { ToolbarGroup } from '@wordpress/components'
  * Internal dependencies
  */
 import HeadingLevelIcon from './icon'
+
+const range = (start, end) => {
+  const arr = []
+  for (let i = start; i <= end; i++) {
+    arr.push(i)
+  }
+  return arr
+}
 
 const HeadingToolbar = ({
   isCollapsed = true,
