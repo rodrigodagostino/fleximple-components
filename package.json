@@ -10,15 +10,18 @@
   "author": "Rodrigo D’Agostino",
   "license": "ISC",
   "devDependencies": {
-    "@babel/eslint-parser": "7.22.15",
-    "@babel/runtime": "7.23.2",
-    "classnames": "2.3.2",
-    "eslint": "8.53.0",
-    "eslint-config-prettier": "9.0.0",
-    "eslint-plugin-jsx-a11y": "6.8.0",
-    "eslint-plugin-prettier": "5.0.1",
-    "eslint-plugin-react": "7.33.2",
-    "react-select": "5.8.0"
+    "@babel/eslint-parser": "7.27.0",
+    "@babel/runtime": "7.27.0",
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.24.0",
+    "classnames": "2.5.1",
+    "eslint": "9.24.0",
+    "eslint-config-prettier": "10.1.2",
+    "eslint-plugin-jsx-a11y": "6.10.2",
+    "eslint-plugin-prettier": "5.2.6",
+    "eslint-plugin-react": "7.37.5",
+    "globals": "^16.0.0",
+    "react-select": "5.10.1"
   },
   "dependencies": {
     "lodash.isfunction": "3.0.9",
